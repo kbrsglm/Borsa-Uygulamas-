@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta  charset="utf-8">
+<title>user Panel</title>
+</head>
+<body>
+<style>
+body {font-family: Arial, Helvetica, sans-serif; 
+}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  
+  
+}
+h2 {
+  
+    color:white;
+    display: inline-flex;
+    font-size: 1.5em;
+    margin-block-start: 0.80em;
+    margin-block-end: 0.50em;
+    margin-inline-start: 100px;
+    margin-inline-end: 10px;
+    font-weight: bold;
+  
+}
+
+
+
+button {
+  background-color: rgb(0, 128, 255);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.buton
+   {
+      position: absolute;
+
+      right: 10px;
+      top: 5px;
+   }
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+.border.border-secondary.p-3.rounded {
+  background-color:#263238;
+}
+
+
+.container {
+  padding: 80px;;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+form {
+border:10px;
+}
+      
+</style>
+<form th:action="@{/save1}"  th:object="${user}" method="post"
+ style="max-width: 350px; margin: 0 auto;">
+		<div class="border border-secondary p-3 rounded">
+         <h2>Hisse Ekle</h2>
+  <div class="container">
+   <input type="text" placeholder="Kod girin" th:field="*{kod}" required>
+    <input type="text" placeholder="İsim girin" th:field="*{name}" required>
+     <button type="submit">Ekle</button>
+
+  </div>
+  </div>
+</form>
+
+</body>
+</html>
+	
+	

@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Edit product</title>
+	</head>
+	<body align="center">
+		<h1>Edit Product</h1>
+		
+		<br><br>
+		<form action="#" method="post" th:action="@{/save}" th:object="${product}">
+		<table  align="center" >
+			<tr>
+				<td>Product Id</td>
+				<td><input type="text" th:field="*{id}" readonly="readonly"></td>
+			</tr>
+			<tr>
+				<td>Product Name</td>
+				<td><input type="text" th:field="*{name}"></td>
+			</tr>
+			<tr>
+				<td>Brand</td>
+				<td><input type="text" th:field="*{brand}"></td>
+			</tr>
+			<tr>
+				<td>Made In</td>
+				<td><input type="text" th:field="*{madein}"></td>
+			</tr>
+			<tr>
+				<td>Price</td>
+				<td><input type="text" th:field="*{price}"></td>
+			</tr>
+			<tr>
+				
+				<td><input type="submit" value="Submit"></td>
+			</tr>
+		</table>
+		</form>
+	</body>
+</html>

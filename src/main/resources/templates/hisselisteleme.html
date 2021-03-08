@@ -1,0 +1,69 @@
+<!DOCTYPE html >
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta  charset="utf-8">
+<head>
+
+</head>
+<style>
+table.table.table-striped {
+    background-color: #263238;
+   
+}
+tr {
+    color: white;
+    left: unset;
+}
+
+th, td {
+    padding: 10px;
+    margin:0 auto;
+}
+
+
+</style>
+	<body align="center">
+		<h1>Hisse Bilgileri</h1>
+	<a href="hisseekle">Yeni Hisse Ekle</a>
+	<br>
+	<br>
+	<div>
+	<center>
+		<table class="table table-striped" border=1 style="width:60%">
+			<thead>
+				<tr>
+					<th> ID</th>
+					<th>Kod</th>
+					<th>İsim</th>
+					<th>Ucret</th>
+					<th>Tarih</th>
+					<th>Güncelle</th>
+					<th>Sil</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${listUser}">
+					<td th:text="${user.id}">ID</td>
+					<td th:text="${user.kod}">Kod</td>
+					<td th:text="${user.name}">İsim</td>
+					<td th:text="${user.ucret}">Ucret</td>
+					<td  th:text="${user.tarih}">Tarih </td>
+				      <td>
+				   	<form th:action="@{/edit1/} + ${user.id}">
+                   <button type="submit">Guncelle</button>
+                 </td>
+                 </form>
+                 <td>
+                 
+                <form th:action="@{/delete1/} + ${user.id}">
+                <button type="submit">Sil</button>
+            </form>
+            
+        </td>
+        </tr>
+				
+				
+			</tbody>
+		</table>
+	</body>
+</html>

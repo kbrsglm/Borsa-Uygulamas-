@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" name="viewport"
+	content="width=device-width, initial-scale=1">
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+	border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+h2 {
+	color: white;
+	display: inline-flex;
+	font-size: 1.5em;
+	margin-block-start: 0.80em;
+	margin-block-end: 0.00em;
+	margin-inline-start: 35px;
+	margin-inline-end: 30px;
+	font-weight: bold;
+   
+}
+
+label {
+	cursor: default;
+	color: white;
+      float:left;
+}
+
+button {
+	background-color: rgb(0, 128, 255);
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+.buton {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+.imgcontainer {
+	text-align: center;
+	margin: 24px 0 12px 0;
+}
+
+.border.border-secondary.p-3.rounded {
+	background-color: #263238;
+}
+
+.container {
+	padding: 80px;;
+}
+
+span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+	span.psw {
+		display: block;
+		float: none;
+	}
+	.cancelbtn {
+		width: 100%;
+	}
+}
+
+form {
+	border: 0px;
+}
+</style>
+</head>
+<body align="center">
+	
+	<form th:action="@{/login}" th:object="${user}" method="post"
+		style="max-width: 350px; margin: 25px auto;">
+		<div class="border border-secondary p-3 rounded">
+			<h2>Yönetici Girişi</h2>
+			<div class="container">
+			    <label for="uname"><b>Kullanıcı adı</b></label>
+				<input type="text" placeholder="Kullanıcı adı"
+					th:field="*{username}" required> 
+					 <label for="psw"><b>Parola</b></label> <input type="password"
+					placeholder="parola" th:field="*{password}" required>
+				<button type="submit">Login</button>
+				<label> <input type="checkbox" checked="checked"
+					name="remember"> Beni Unutma
+				</label>
+				</div>
+				</div>
+	</form>
+
+</body>
+</html>

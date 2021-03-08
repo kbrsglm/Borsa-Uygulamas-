@@ -1,0 +1,76 @@
+<!DOCTYPE html >
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta  charset="utf-8">
+<head>
+
+</head>
+<style>
+table.table.table-striped {
+    background-color: #263238;
+   
+}
+tr {
+    color: white;
+    left: unset;
+}
+
+th, td {
+    padding: 10px;
+    margin:0 auto;
+}
+
+
+</style>
+
+<body align="center">
+	<h1>Kullanıcı Bilgileri</h1>
+	<a href="new">Yeni Kullanıcı Ekle</a>
+	<br>
+	<br>
+	<div>
+	<center>
+   <table class="table table-striped" border=1 style="width:70%">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>İsim</th>
+				<th>Soyisim</th>
+				<th>Email</th>
+				<th>Kullanıcı Tipi</th>
+				<th>Kullanıcı Adı</th>
+				<th>Parola</th>
+				<th>Güncelle</th>
+				<th>Sil</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="product : ${listProducts}">
+				<td th:text="${product.id}">ID</td>
+				<td th:text="${product.firstname}">İsim</td>
+				<td th:text="${product.lastname}">Soyisim</td>
+				<td th:text="${product.email}">Email</td>
+				<td th:text="${product.userType}">Kullanıcı Tipi</td>
+				<td th:text="${product.username}">Kullanıcı Adı</td>
+				<td th:text="${product.password}">Parola</td>
+				<td>
+				<form th:action="@{/edit/} + ${product.id}">
+						<button type="submit">Guncelle</button>
+					</form>
+				
+					
+
+				</td>
+				<td>
+				<form th:action="@{/delete/} + ${product.id}">
+						<button type="submit">Sil</button>
+					</form>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</center>
+	</div>
+</body>
+</html>

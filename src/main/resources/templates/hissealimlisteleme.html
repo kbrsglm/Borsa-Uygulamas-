@@ -1,0 +1,53 @@
+<!DOCTYPE html >
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta  charset="utf-8">
+<head>
+
+</head>
+<style>
+table.table.table-striped {
+    background-color: #263238;
+   
+}
+tr {
+    color: white;
+    left: unset;
+}
+
+th, td {
+    padding: 10px;
+    margin:0 auto;
+}
+
+
+</style>
+	<body align="center">
+		<h1>Hisse Alım Bilgileri</h1>
+	<br>
+	<br>
+	<div>
+	<center>
+		<table class="table table-striped" border=1 style="width:60%">
+			<thead>
+				<tr>
+					
+					<th>Kod</th>
+					<th>Miktar</th>	
+					<th>Toplam</th>				
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${alimsatimx}">
+					<td th:text="${user.testOrder}"></td>
+					<td th:text="${user.miktar}"></td>
+					<td th:text="${user.toplam}"></td>
+				      
+               </tr>
+        
+				
+				
+			</tbody>
+		</table>
+	</body>
+</html>
